@@ -15,6 +15,8 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Square grass;
+    private ProcessBuilder.Redirect.Type yPosition;
 
     /**
      * Constructor for objects of class Picture
@@ -51,9 +53,18 @@ public class Picture
         sun = new Circle();
         sun.changeColor("yellow");
         sun.moveHorizontal(100);
-        sun.moveVertical(-40);
+        sun.moveVertical(100);
         sun.changeSize(80);
         sun.makeVisible();
+
+        grass = new Square();
+        grass.changeColor("green");
+        grass.moveHorizontal(-1200);
+        grass.moveVertical(140);
+        grass.changeSize(2000);
+        grass.makeVisible();
+        
+        sun.slowMoveVertical(-100);
     }
 
     /**
@@ -67,6 +78,7 @@ public class Picture
             window.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
+            grass.changeColor("green");
         }
     }
 
@@ -81,6 +93,7 @@ public class Picture
             window.changeColor("black");
             roof.changeColor("green");
             sun.changeColor("yellow");
+            grass.changeColor("geen");
         }
     }
 }
