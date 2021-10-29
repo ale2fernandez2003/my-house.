@@ -16,6 +16,7 @@ public class Picture
     private Triangle roof;
     private Circle sun;
     private Square grass;
+    private Person human;
     private ProcessBuilder.Redirect.Type yPosition;
 
     /**
@@ -64,7 +65,13 @@ public class Picture
         grass.changeSize(2000);
         grass.makeVisible();
         
-        sun.slowMoveVertical(-100);
+        sun.slowMoveVertical(-200);
+        
+        human = new Person();
+        human.changeColor("black");
+        human.moveHorizontal(-300);
+        human.moveVertical(40);
+        human.makeVisible();
     }
 
     /**
@@ -94,6 +101,20 @@ public class Picture
             roof.changeColor("green");
             sun.changeColor("yellow");
             grass.changeColor("geen");
+        }
+    }
+    
+    /**
+     * Draw this picture.
+     */
+    public void atardecer()
+    {
+        if (wall != null)   // only if it's painted already...
+        {
+            sun.slowMoveVertical(500);
+        }
+        {
+            human.slowMoveHorizontal(150);
         }
     }
 }
